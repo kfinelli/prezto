@@ -31,7 +31,9 @@ zstyle ':prezto:load' pmodule \
   'directory' \
   'spectrum' \
   'utility' \
+  'git' \
   'completion' \
+  'syntax-highlighting' \
   'prompt'
 
 #
