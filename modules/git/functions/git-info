@@ -280,7 +280,7 @@ function git-info {
             --no-ext-diff \
             --name-only \
             --cached \
-            --ignore-submodules=${ignore_submodules:-none} \
+#            --ignore-submodules=${ignore_submodules:-none} \
             HEAD \
             2> /dev/null \
           | wc -l
@@ -299,7 +299,7 @@ function git-info {
           git diff-files \
             --no-ext-diff \
             --name-only \
-            --ignore-submodules=${ignore_submodules:-none} \
+#            --ignore-submodules=${ignore_submodules:-none} \
             2> /dev/null \
           | wc -l
         )
@@ -329,7 +329,8 @@ function git-info {
     (( dirty = indexed + unindexed + untracked ))
   else
     # Use porcelain status for easy parsing.
-    status_cmd="git status --porcelain --ignore-submodules=${ignore_submodules:-none}"
+    status_cmd="git status --porcelain 
+   # --ignore-submodules=${ignore_submodules:-none}"
 
     # Get current status.
     while IFS=$'\n' read line; do
